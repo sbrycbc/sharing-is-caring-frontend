@@ -19,9 +19,9 @@ const config = {
       onlineProduct:  backendUrl + "/products/online/",
     },
     message:{
-      createNewConversation : backendUrl + "messages/send",
-      getCoversationById : backendUrl + "messages/:id",
-      addMessageToConversation : backendUrl + "messages/addto",
+      createNewConversation : backendUrl + "/messages/send",
+      getCoversationById : backendUrl + "/messages/:id",
+      addMessageToConversation : backendUrl + "/messages/addto",
     }
   },
   database: {
