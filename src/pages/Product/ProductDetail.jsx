@@ -5,12 +5,14 @@ import { Button, Form, Col, Row} from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import image01 from "../../assets/Book-3.jpg";
 import "./ProductDetails.scss";
+import config from '../../component/config/config';
+
 
 
 const ProductDetails = (props) => {
     const [message, setMessage] = useState();
-    const createNewConversationUrl = "http://localhost:3333/messages/send";
-    const addMessageToConversationUrl = "http://localhost:3333/messages/addto";
+    const createNewConversationUrl = config.routes.message.createNewConversation;
+    const addMessageToConversationUrl = config.routes.message.addMessageToConversation;
 
     const {products, userInfo, userObject} = props;
     const navigate = useNavigate();
