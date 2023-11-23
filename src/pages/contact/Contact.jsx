@@ -1,9 +1,11 @@
 import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import "./Contact.scss";
-import frau from "../../assets/frau.webp";
 import port from "../../assets/mann.webp";
-
+import Miad from "../../assets/miad.jpg";
+import Sabriye from "../../assets/sabriye.jpg";
+import Bennej from "../../assets/bennej.jpg";
+import Doreen from "../../assets/doreen.jpg";
 import { VscMail } from "react-icons/vsc";
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400;500&family=Satisfy&display=swap');
@@ -20,36 +22,46 @@ const Contact = () => {
         </section>
         <br />
         <br />
-        <Row  sm='12' className="col-lg-12 col-md-12 ">
+        <Row  sm='12' className="col-lg-12 col-md-12  ">
           <h3>UNSERE TEAM</h3>
           <br />
           <br />
           <br />
-          <Col className="img1 mb-5 ">
-            <img className="img" src={frau} alt="" srcset="" />
-            <h2 className="img-text">MIAD</h2>
+          
+          <Col className="img1 mb-5 d-flex justify-content-center m-1">
+            <img className="img" src={Miad} alt="" srcset="" />
+            <h2 className="img-text">MIAD </h2>
+            <p className="img-tex">Frontend Leiter</p>
           </Col>
-          <Col className="img1 mb-5">
-            <img className="img" src={port} alt="" srcset="" />
+          <Col className="img1 mb-5 d-flex justify-content-center m-">
+            <img className="img" src={Sabriye} alt="" srcset="" />
+           
+            <h2 className="img-text">SABRIYE</h2>
+            <p className="img-tex">Backend Leiter</p>
+            
+          </Col>
+          <Col className="img1  mb-5 d-flex justify-content-center m-2">
+            <img className="img" src={Doreen} alt="" srcset="" />
+            <h2 className="img-text"> DOREEN </h2>
+            <p className="img-tex">Project Leiter</p>
+          </Col>  
+          <Col  className="img1 mb-5 d-flex justify-content-center m-2">
+            <img className="img" src={Bennej} alt="" srcset="" />
             <h2 className="img-text">BENNEJ</h2>
+            <p className="img-tex">GitHub Leiter</p>
           </Col>
-          <Col  className="img1 mb-5">
+
+          <Col className="img1 mb-5 d-flex justify-content-center m-2">
             <img className="img" src={port} alt="" srcset="" />
-            <h2 className="img-text">DIRK</h2>
-          </Col>
-          <Col className="img1  mb-5">
-            <img className="img" src={frau} alt="" srcset="" />
-            <h2 className="img-text"> SABRIYE </h2>
-          </Col>
-          <Col className="img1 mb-5 ">
-            <img className="img" src={frau} alt="" srcset="" />
-            <h2 className="img-text img-text2" > DOREEN </h2>
-          </Col>
+            <h2 className="img-text" > DIRK</h2>
+            <p className="img-tex">Project Leiter</p>
+          </Col>  
         </Row>
         <br />
         <br />
         <br />
-        <br />
+        <br /> 
+        
         <Row className=" sec1">
           <Col lg="5" className="mb-5">
             <h3 className="py-4 ">KONTAKTIEREN SIE UNS</h3>

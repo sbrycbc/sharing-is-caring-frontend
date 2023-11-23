@@ -5,7 +5,9 @@ import { Container, Row, Col, Input } from "reactstrap";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
-import Garten from "../../assets/Garten.jpg";
+import Garten from "../../assets/garten3.jpg";
+import Shose from '../../assets/shose1.jpg';
+import Deco from '../../assets/deco5.jpg';
 import Kleidung from "../../assets/Kleidung.jpg";
 import Alle from "../../assets/Alle.png";
 import Elektronik from "../../assets/Elektronik.png";
@@ -16,6 +18,8 @@ import Decoration from "../../assets/Decoration.jpg";
 import Book from "../../assets/Book.jpg";
 import ProductCard from "../dashboard/ProductCard";
 import { AppContext } from "../../AppContext";
+import LoadingImage from "../../assets/loading.gif";
+
 
 
 const Home = () => {
@@ -126,7 +130,7 @@ const Home = () => {
               <div className="search-bar">
                 <Input
                   type="text"
-                  placeholder="Search by product name"
+                  placeholder="Suche nach Produktnamen"
                   value={searchTerm}
                   onChange={handleSearchChange}
                 />
@@ -144,11 +148,19 @@ const Home = () => {
                 </div>
                 <div>
                   <img src={Book03} alt="Book" />
-                  <p className="legend">Book</p>
+                  <p className="legend">Bücher</p>
                 </div>
                 <div>
                   <img src={Spielzeug} alt="Spielzeug" />
                   <p className="legend">Spielzeug</p>
+                </div>
+                <div>
+                  <img src={Shose} alt="Schuhe" />
+                  <p className="legend">Schuhe</p>
+                </div>
+                <div>
+                  <img src={Deco} alt="Decoration" />
+                  <p className="legend">Dekoration</p>
                 </div>
               </Carousel>
             </Col>
@@ -160,13 +172,15 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12">
-              <h2 className="text-center">POPULAR CATEGORIES</h2>
-              <div className="popular_category d-flex align-items-center justify-content-center gap-3">
+              <h2 className="text-center">BELIEBTE KATEGORIEN</h2>
+              <div className="popular_category">
                 {renderCategoryButtons()}
               </div>
             </Col>
           </Row>
-          <Row className="product-card-div ">
+          <div className= "product-container">
+          {filteredProducts.length > 0 ?
+          <Row className="product-card-div">
             {filteredProducts &&
               filteredProducts.map((product, index) => (
                 <Col lg="3">
@@ -176,6 +190,13 @@ const Home = () => {
                 </Col>
               ))}
           </Row>
+          : 
+          <div className="d-flex justify-content-center">
+          <img src={LoadingImage} width="250" alt="loading"></img>
+          </div>
+           }
+          </div>
+         
         </Container>
       </section>
     </>

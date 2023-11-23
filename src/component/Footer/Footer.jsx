@@ -1,48 +1,38 @@
-import React from 'react';
-import facebook from './assets/icons8-facebook-50.png';
-import instagram from './assets/instagram.png';
-import linkedIn from './assets/linkedin.png';
-import twitter from './assets/twitter.png';
-import './Footer.scss'
+import React from "react";
+import { Container, Col, Row } from "react-bootstrap";
+import { FaInstagram, FaSquareFacebook } from "react-icons/fa6";
+import { RiTwitterXLine } from "react-icons/ri";
+import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <div className="footer">
-          <div className="footer-col">
-              <h4>Social Media</h4>
-                    <a href="url" target="_blank">
-                      <img src={facebook} alt="Facebook"/>
-                    </a>
-                    <a href="url" target="_blank">
-                      <img src={instagram} alt="Instagram" height="50px" width="50px"/>
-                    </a>    
-                    <a href="url" target="_blank">
-                      <img src={twitter} alt="LinkedIn"/>
-                    </a>
-                    <a href="url" target="_blank">
-                      <img src={linkedIn} alt="Instagram" height="50px" width="50px"/>
-                    </a>  
-          </div>
-          <div className="footer-col">
-              <h4>sharing is caring</h4>
-              <ul>
-                <li>Über uns</li>
-                <li>Blog</li>
-                <li>Zertifikate</li>
-                <li>Newsletter</li>
-              </ul>
-
-          </div>
-          <div className='footer-col'> 
-            <h4>Service</h4>
-
-          </div>
-          <div className="footer-col">
-            <h4>Hilfe</h4>
-          </div>
+    <div className="footer mt-5 p-1">
+      <Container>
+        <Row className="align-items-center justify-content-center">
+          <Col lg="4">
+            <p className="mt-3 footer_text">© 2023 SHARING IS CARING™</p>
+          </Col>
+          <Col lg="4" className="icons d-flex justify-content-center">
+            <div>
+              <a href="https://www.instagram.com/">
+                <FaInstagram />
+              </a>
+            </div>
+            <div>
+              <a href="https://www.facebook.com/">
+                <FaSquareFacebook />
+              </a>
+            </div>
+            <div>
+              <a href="https://twitter.com/">
+                <RiTwitterXLine />
+              </a>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
-  
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

@@ -5,14 +5,12 @@ import { Button, Form, Col, Row} from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import image01 from "../../assets/Book-3.jpg";
 import "./ProductDetails.scss";
-import config from '../../component/config/config';
-
 
 
 const ProductDetails = (props) => {
     const [message, setMessage] = useState();
-    const createNewConversationUrl = config.routes.message.createNewConversation;
-    const addMessageToConversationUrl = config.routes.message.addMessageToConversation;
+    const createNewConversationUrl = "http://localhost:3333/messages/send";
+    const addMessageToConversationUrl = "http://localhost:3333/messages/addto";
 
     const {products, userInfo, userObject} = props;
     const navigate = useNavigate();
@@ -143,25 +141,30 @@ const ProductDetails = (props) => {
                     placeholder="Deine Nachricht hier eingeben!" 
                         />
             </Form.Group>
-            <Button className='btn-btn' style={{background:'#b54f30', marginBottom:'30px'}}  onClick={handleSubmit}>
+            <Button className='btn-btn' style={{background:'#b54f30'}}  onClick={handleSubmit}>
                         Abschicken!
             </Button>
         </Form>
 
             </Col> }
+            {
+        userInfo && userInfo.id === product.user &&
+     
+            <div className="userInfo-empty-space"></div> }
             { !userInfo &&
             <Col lg="8">
-              <p>Wenn Sie nicht eingelogttt</p>
+              <p>Nehmen Sie Kontakt auf zum Anbietenden.</p>
  
             <Link to="/login">
-            <Button className='btn-btn' style={{background:'#b54f30', marginBottom:'30px'}}>
-                        Zum Anmelden
+            <Button className='btn-btn' style={{background:'#b54f30', marginBottom:'70px'}}>
+                        Zur Anmeldung
             </Button>
             </Link>
    
             </Col>
 
              }
+
     
         </Row>
         
