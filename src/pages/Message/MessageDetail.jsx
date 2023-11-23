@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Button, Form, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "./MessageDetail.scss";
 
 const MessageDetail = (props) => {
-  const [messageContent, setMessageContent] = useState();
+  const [messageContent, setMessageContent] = useState('');
 
   const { userInfo, userObject } = props;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { id } = useParams();
   const addMessageToConversationUrl = `http://localhost:3333/messages/addto`;
@@ -43,7 +43,7 @@ const MessageDetail = (props) => {
       console.error("Error sending data:", error);
     }
     setMessageContent("");
-    navigate("/dashboard");
+    // navigate("/dashboard");
   };
 
   return (
@@ -72,6 +72,7 @@ const MessageDetail = (props) => {
             <Form.Control
               as="textarea"
               className="mb-2"
+              value={messageContent}
               name="message"
               onChange={handleChange}
               placeholder="Deine Nachricht hier eingeben!"
