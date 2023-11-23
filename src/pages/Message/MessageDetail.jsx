@@ -4,7 +4,7 @@ import axios from "axios";
 import { Button, Form, Row } from "react-bootstrap";
 // import { useNavigate } from "react-router-dom";
 import "./MessageDetail.scss";
-import config from '../../config/config';
+import config from '../../component/config/config';
 
 const MessageDetail = (props) => {
   const [messageContent, setMessageContent] = useState('');

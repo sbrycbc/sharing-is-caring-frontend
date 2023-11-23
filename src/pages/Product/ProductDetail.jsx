@@ -5,7 +5,7 @@ import { Button, Form, Col, Row} from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import image01 from "../../assets/Book-3.jpg";
 import "./ProductDetails.scss";
-import config from '../../config/config';
+import config from '../../component/config/config';
 
 
 const ProductDetails = (props) => {
