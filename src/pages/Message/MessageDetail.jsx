@@ -4,6 +4,7 @@ import axios from "axios";
 import { Button, Form, Row } from "react-bootstrap";
 // import { useNavigate } from "react-router-dom";
 import "./MessageDetail.scss";
+import config from '../../config/config';
 
 const MessageDetail = (props) => {
   const [messageContent, setMessageContent] = useState('');
@@ -12,7 +13,7 @@ const MessageDetail = (props) => {
   // const navigate = useNavigate();
 
   const { id } = useParams();
-  const addMessageToConversationUrl = `http://localhost:3333/messages/addto`;
+  const addMessageToConversationUrl = config.routes.message.addMessageToConversation;
   const conversation = userObject?.conversations.find((conv) => conv._id === id);
 
   const handleChange = (e) => {
