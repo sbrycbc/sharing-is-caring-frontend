@@ -29,7 +29,6 @@ const ProductDetails = (props) => {
       });
     }
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -98,13 +97,23 @@ const ProductDetails = (props) => {
               />
             </div>
           </Col>
-          <Col className="" >
-            <h1 style={{color:'#b54f30'}}>{product.name}</h1>
+          <Col className="flex-container" >
+            <Row>
+           <Col><h1 style={{color:'#b54f30'}}>{product.name}</h1> </Col> 
+          <Col>
+          <div style={{border:'solid 3px #0b9595', borderRadius:'18px', width:'200px'}} > 
+              <h5 style={{paddingTop:'15px',marginLeft:'15px'}}>ANBIETER:</h5>
+                <p style={{paddingTop:'15px'}}> {product.user.name.charAt(0).toUpperCase() +
+                    product.user.name.slice(1)
+                  }</p>
+                  </div>
+              </Col>  
+           </Row>
             <hr />
 
             <div className="flex-container">
               <div>
-                <h5>ART:</h5>
+                <h5>KATEGORIE:</h5>
                 <p>{product.category}</p>
               </div>
               <div>
